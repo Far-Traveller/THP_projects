@@ -1,0 +1,13 @@
+body
+{
+line-height: 1.28;
+font-size: 18px;
+color: rgb(68,68,68);
+margin: 40px auto;
+max-width: 650px;
+}
+
+p,ul, blockquote
+{
+line-height: 1.6;
+}

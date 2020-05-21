@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('OpenSans-Regular-webfont.eot');
+    src: url('OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Regular-webfont.woff2') format('woff2'),
+         url('OpenSans-Regular-webfont.woff') format('woff'),
+         url('OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body
+{
+font-family: 'open_sansregular', Arial;
+color: rgb(68,68,68);
+font-size: 16px;
+margin: 2em auto;
+max-width: 800px;
+padding:1em;
+line-height: 1.4;
+text-align: justify;
+}
+
+.rougefoncé
+{	color: rgb(115,0,0);}
+
+.bleumarine
+{color: rgb(0,0,238);}
+
+.marron
+{	color: #85144b;}
+
+.arcenciel
+{	color:#313131;
+    -webkit-animation:colorchange 10s infinite}
+@-webkit-keyframes colorchange {
+      0% {color: #ff207c;}
+      10% {color: #8d00b0;}
+      20% {color: #2600b0;}
+      30% {color: #0575f5;}
+      40% {color: ;}
+      50% {color: ;}
+      60% {color: ;}
+      70% {color: ;}
+      80% {color: ;}
+      90% {color: ;}
+      100% {color: ;}
+    }
+
+div.blocphoto div.flottant
+  {float:left;
+    width:40%;
+    overflow:hidden;
+    margin-right:1em}
+
+div.blocphoto div.flottant img
+{width: 100%}
+
+div.blocphoto div.flottant .legend
+{font-size: .7em}
+
+div.blocphoto div.textegauche
+{float: left;
+width: 55%}
+
+div.blocphoto div.textegauche p:first-child
+{margin-top: 0}
+
+div.blocphoto:after {
+ display:block;
+ content:"";
+ clear:both
+}
+
+.quatre
+{color: #444;
+  font-weight: bold;
+}
+
+.quatre:before
+{ content:"";
+ display:inline-block;
+ width:1em;
+ height:1em;
+ margin-left:.2em;
+ margin-right:.2em;
+ background-color:#444}
+
+.cinq
+{color: #454545;
+  font-weight: bold;
+}
+
+.cinq:before
+{ content:"";
+ display:inline-block;
+ width:1em;
+ height:1em;
+ margin-left:.2em;
+ margin-right:.2em;
+ background-color:#454545}

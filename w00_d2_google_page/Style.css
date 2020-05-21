@@ -1,0 +1,85 @@
+body
+{font-family: arial}
+
+#haut
+{display: flex;
+font-size: 13px;
+justify-content: flex-end;
+margin: 10px;
+}
+
+a
+{text-decoration:none}
+
+.lien
+{padding-right: 15px;
+padding-top: 10px;
+font-size:13px;
+color: black}
+
+.lien2
+{display: inline-block;
+padding:7px 12px 7px 12px;
+font-size:13px;
+background: rgb(68,134,249);
+color: white;
+font-weight: bold;
+border-radius: 3px;
+}
+
+#Logo
+{
+display: flex;
+padding-top: 130px;
+justify-content: center;
+}
+
+#recherche
+{display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+button
+{border: 0;
+border-radius: 3px;
+font-size:13px; 
+margin:11px 4px;
+padding: 9px 14px 9px 14px;
+color: rgb(95,99,104);
+cursor: pointer;
+}
+
+#main
+{margin-right:10px;}
+
+#Corona
+{display: flex;
+  flex-direction: row;
+justify-content: center;
+font-size: 13px;
+align-items: center;
+margin-top: 20px
+}
+
+.footer1, .footer2
+{display: flex;
+font-size: 13px;
+background-color: rgb(242,242,242);
+border: 1px solid rgb(228,228,228);
+color:rgb(95,99,108);
+height: 40px;
+padding-right: 20px;
+margin:auto;
+}
+
+.footer1
+{margin-top: 100px}
+
+#search
+{display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+cover

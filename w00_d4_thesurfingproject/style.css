@@ -1,0 +1,29 @@
+/*body*/
+.jumbotron-hero
+{
+  height: 500px;
+
+  background-image: url("surf.jpg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.list
+{
+  display: inline-flex;
+}
+.btn-primary
+{
+  margin: 10px;
+}
+.btn-secondary
+{
+  margin: 10px;
+}
