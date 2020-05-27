@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>PAGE POTIN</title>
+  </head>
+  <body>
+    <h1>PAGE POTIN</h1>
+      <% gossips.each_with_index do |gossip, index| %>
+        <h2>Voici le potin n° <%= id%></h2>
+        <p>Son auteur : <%= gossip.author %><br/>
+          Le contenu du potin : <%= gossip.content %>
+        </p>
+  
+        <p>Tu souhaites éditer ce potin ? Alors cliques ici : <br/>
+          <a href=/gossips/<%= (index +1)%>/edit/>Editer ce potin</a>
+        </p>
+      <% end %>
+    <a href="/">Clique ici pour revenir à la page d'accueil des potins</a>
+  
+  </body>
+</html>
