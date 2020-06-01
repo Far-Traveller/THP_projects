@@ -5,3 +5,7 @@
 @import "font-awesome";
 @import "components/*";
 
+.task-status-true {
+    text-decoration: line-through;
+    color: grey;
+}

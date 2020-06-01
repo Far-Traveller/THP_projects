@@ -80,6 +80,7 @@ et les boutons "Edit" / "View" restent visibles. Cette fonction sera réversible
   };
 };
 
+
 //Fonctionnalité 7 :
 /*si un utilisateur clique sur le bouton gris ==>,
 la dernière card (en bas à droite) va passer en premier (en haut à gauche). On va pouvoir faire tourner les cards !*/
@@ -99,6 +100,7 @@ la dernière card (en bas à droite) va passer en premier (en haut à gauche). O
 //Fonctionnalité 8 :
 /*Évidemment tu t'y attendais : on va faire tourner les card dans l'autre sens aussi.
 Donc si un utilisateur clique sur le bouton bleu <==, la première card devra passer en dernier.*/
+
 {
   let blueBtn = document.getElementsByClassName('btn btn-primary my-2')[0];
   
@@ -121,6 +123,7 @@ Donc si un utilisateur clique sur le bouton bleu <==, la première card devra pa
 - Si l'utilisateur presse la touche "y", l'ensemble de la page va être condensé sur 4 colonnes Bootstrap au milieu de l'écran.
 - Si l'utilisateur presse la touche "p", l'ensemble de la page va être condensé sur 4 colonnes Bootstrap à droite de l'écran.
 - Si l'utilisateur presse la touche "b", tout redevient normal.*/
+
 {
   let jsBtn = document.getElementsByClassName('navbar-brand')[0];
   
@@ -132,15 +135,15 @@ Donc si un utilisateur clique sur le bouton bleu <==, la première card devra pa
       body.classList = '';
       body.classList.add('col-4');
     }
-    else if (key === 'y' || key === 'Y') {
+    else if (key === 'y'|| key === 'Y') {
       body.classList = '';
       body.classList.add('col-4', 'offset-md-4');
     }
-    else if (key === 'p' || key === 'P') {
+    else if (key === 'p'|| key === 'P') {
       body.classList = '';
       body.classList.add('col-4', 'offset-md-8');
     }
-    else if (key === 'b' || key === 'B') {
+    else if (key === 'b'|| key === 'B') {
       body.classList = '';
     };    
   });

@@ -3,16 +3,22 @@
 <div class="container">
   <ul>
   <% @categories.each do  |category|%>
-  <li><%= category.title  %></li>
-  <div class="card">
-    <ul>
-      <% category.tasks.each do |task|  %>
-      <li>
-        <%= task.title  %>
-        <% unless task.deadline.nil? %>
-          , to read: <%= task.deadline.strftime('%D')  %>
+    <li id="<%= category.title.split(" ").join("") %>"><%= category.title  %></li>
+    <div class="card">
+      <ul>
+        <% category.tasks.each do |task|  %>
+        <li id="task-<%=task.id%>">
+        <%= check_box_tag :status, 1, task.status , data: { remote: true, url: task_path(task.id), params: { id: task.id, status: !task.status }.to_param, method: "put" }%>
+        <% if task.status == false %>
+            <span class="task-title"><%= task.title  %></span>
+        <% else %>
+            <span class="task-title task-status-true"><%= task.title  %></span>
         <% end %>
-      </li>
+          <% unless task.deadline.nil? %>
+            , to read: <%= task.deadline.strftime('%D')  %>
+          <% end %>
+          <%= link_to task_path(task), method: :delete, class: "btn delete-task", remote: true do %><i class="fas fa-trash-alt" style="color:#bb2323;"></i><% end %>
+        </li>
       <% end %>
     </ul>
   </div>

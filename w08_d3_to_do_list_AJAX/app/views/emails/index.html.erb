@@ -1,0 +1,33 @@
+<div class="container"> 
+  <h1 class="text-center text-info">Ta super boîte mail trop géniale</h1>
+
+  <hr>
+  <div class="row">
+      <div class="col-4">
+      <table class="table">
+          <thead class="thead-primary">
+          </thead>
+          <tbody id="mail_list" class="list-group">  
+          <b class="list-group-item text-white bg-primary">Emails</b>
+              <% @emails.order(:created_at).each do |email| %>
+              <tr>
+              <%= render 'email', email: email %>
+              </tr>
+              <% end %>
+          </tbody>
+      </table>
+      </div>
+      <div class="col-8 border">
+      <table class="table">
+          <thead class="thead text-white bg-primary">
+          <tr>
+              <th scope="col">Content</th>
+          </tr>
+          </thead>
+          <tbody id="content">
+
+          </tbody>
+      </table>
+      </div>
+  </div>  
+</div>
