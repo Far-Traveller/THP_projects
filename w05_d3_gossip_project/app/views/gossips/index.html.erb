@@ -1,0 +1,41 @@
+<% if @gossip.save %>
+  <div class="alert alert-success" role="alert">
+    Super ! Tu as réussi à créer un potin !
+  </div>
+<% end %>
+
+<% if @destroy == true %>
+  <div class="alert alert-danger" role="alert">
+    Tu as supprimé un gossip !
+  </div>
+<% end %>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3 text-info">Yo ho, Moussaillon !</h1>
+    <p class="lead">Ici tu retrouveras tous les potins de THP, prépare-toi à être subjugué par tant de ragôts... (ou pas)</p>
+  </div>
+</div>
+
+<div class="card-deck">
+  <% Gossip.all.each do |gossip| %>
+    <div class="col-4 mb-2">
+        <div class="card border-info mb-3 mx-auto text-center text-info" style="max-width: 25rem;">
+          <div class="card-header text-white bg-info">Gossip n°<%= Gossip.all.index(gossip) + 1 %> par <b><%= link_to gossip.user.first_name, user_path(gossip.user.id), :class => "text-white" %></b> <i>(de <%= link_to gossip.user.city.name, city_path(gossip.user.city.id), :class => "text-white" %>)</i></div>
+            <div class="card-body">
+              <h5 class="card-title"><%= gossip.title %> </h5>
+              <p class="card-text font-italic text-dark"><%= gossip.content.slice(0..30) %>...</p>
+              <span><%= link_to "En savoir plus", gossip_path(gossip.id), :class => "btn btn-outline-info" %></span><span class="sr-only">(current)</span>
+              </br></br>
+              <small class="text-secondary"><%= gossip.comments.count %> commentaire(s)</small>
+             </div>
+          </div>
+        </div>
+  <%end%>
+</div>
+<hr>
+
+
+<footer class="container text-center">
+  <p>THE END ... ?</p>
+</footer>

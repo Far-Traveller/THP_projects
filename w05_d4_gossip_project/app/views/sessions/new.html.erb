@@ -1,0 +1,38 @@
+<% if flash[:danger] %>
+  <div class="alert alert-danger" role="alert">
+    <%= flash[:danger] %>
+  </div>
+<% end %>
+
+<% flash[:danger] = nil %>
+
+<div class="jumbotron jumbotron-info text-white bg-info border border-info rounded">
+  <div class="container">
+    <h1 class="display-3">Connecte-toi</h1>
+    <p class="lead font-italic">Bien le bonjour, Moussaillon !</p>
+  </div>
+</div>
+
+<div class ="panel panel-default">
+  <div class ="panel-body m-5">
+    <%= form_for(:session, url: sessions_path, action: 'create') do |f| %>
+
+    <div class="form-group lead mb-4">
+      <%= f.label :email, "Email" %>
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+
+    <div class="form-group lead mb-4">
+      <%= f.label :password, "Mot de passe" %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Se connecter", class: 'btn btn-info' %>
+    </div>
+
+    <% end %>
+  </div>
+</div>
+
+<% puts params %>

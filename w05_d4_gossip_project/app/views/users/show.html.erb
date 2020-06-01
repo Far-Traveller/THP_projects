@@ -1,0 +1,30 @@
+<div class="jumbotron jumbotron-info text-white bg-info border border-info rounded">
+  <div class="container">
+    <h1 class="display-3"><%=@user.first_name%> <%=@user.last_name%></h1>
+    <p class="lead font-italic">Auteur n°<%= User.all.index(@user) + 1 %></p>
+  </div>
+</div>
+
+<div class="container marketing">
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading"><%=@user.description%></h2>
+      </br>
+      <p class="lead"><%=@user.age%> ans</p>
+      <p class="lead"><%=@user.email%></p>
+      </br>
+      <p class="mb-1 text-muted">Créé le <%=@user.created_at%></p>
+      <p class="mb-1 text-muted">Modifié le <%=@user.updated_at%></p>
+      </br>
+      <p class="mb-1 text-muted font-italic">Depuis la ville de <%=@user.city.name%></p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="featurette-image img-fluid mx-auto rounded" src="https://www.presse-citron.net/wordpress_prod/wp-content/uploads/2018/09/deadpool-prison.jpg" data-holder-rendered="true" style="width: 560px; height: 340px">
+    </div>
+  </div>
+  </br>
+
+  <p class="text-center">
+    <span><%= link_to "En savoir plus sur la ville de l'auteur", city_path(@user.city.id), :class => "btn btn-dark" %></span><span class="sr-only">(current)</span>
+  </p>
+</div>

@@ -1,0 +1,40 @@
+<% if @gossip.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    Sorry, impossible de modifier le potin pour la (ou les) raison(s) suivante(s) :
+    <ul>
+      <% @gossip.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="jumbotron jumbotron-success text-white bg-success border border-success rounded">
+  <div class="container">
+    <h1 class="display-3">Modifie le potin n°<%= Gossip.all.index(@gossip) + 1 %></h1>
+    <p class="lead font-italic">Penses à remplir tous les champs !</p>
+  </div>
+</div>
+
+<div class ="px-5 mt-5">
+  <%= form_for @gossip do |f| %>
+
+    <div class="form-group lead mb-0">
+      <label>Titre du potin</label>
+      <%= f.text_field :title, maxlength: 14, class: 'form-control'%>
+    </div>
+    <br />
+
+    <div class="form-group lead mb-4">
+      <label>Contenu du potin</label>
+      <%= f.text_area :content, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-success">Modifier le potin</button>
+    </div>
+
+  <% end %>
+</div>
+
+<%puts params%>

@@ -1,0 +1,151 @@
+.container {
+    margin-top: 50px;
+    padding: 5px;
+    
+}
+
+/************************/
+/* 	    COULEURS        */
+/************************/
+
+.dark-primary-color    { 
+    background: #303F9F; 
+}
+
+.default-primary-color { 
+    background: #3F51B5; 
+}
+.light-primary-color   { 
+    background: #C5CAE9; 
+    color: #212121;
+}
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #FFC107; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #757575; }
+.divider-color         { border-color: #BDBDBD; }
+
+/************************/
+/* 	       FONT         */
+/************************/
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+p, .bouton {
+    font-family:'Balsamiq Sans', cursive;
+}
+
+/************************/
+/* 	       FORMS         */
+/************************/
+
+.form-rounded {
+    border-radius: 1rem;
+    background: #e1e1e1;
+    border-top: 1px solid #d0d0d0;
+}
+
+
+
+/************************/
+/* 	       LISTS         */
+/************************/
+
+ol {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+    
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+  }
+  ol li {
+    counter-increment: my-awesome-counter;
+    display: flex;
+    width: 50%;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    color: #303F9F;
+  }
+  ol li::before {
+    content: "0" counter(my-awesome-counter);
+    font-weight: bold;
+    font-size: 2rem;
+    margin-right: 1rem;
+    font-family: 'Fredericka the Great', serif;
+    line-height: 1;
+  }
+
+
+
+
+/************************/
+/* 	     BOUTONS        */
+/************************/
+.button {
+	padding:6px 50px;
+	border-radius:8px;
+}
+
+.btn_primary {
+    background:#303F9F;
+    border: 2px solid #303F9F;
+}
+.btn_primary:hover {
+    background-color: white;
+    color: #303F9F;
+    border: 2px solid #303F9F;
+}
+
+.btn_warning {
+    background:#ffb300;
+    border: 2px solid #ffb300;
+}
+.btn_warning:hover {
+    background-color: white;
+    color: #ffb300;
+    border: 2px solid #ffb300;
+}
+
+.btn_danger {
+    background:#d50000;
+    border: 2px solid #d50000;
+}
+.btn_danger:hover {
+    background-color: white;
+    color: #d50000;
+    border: 2px solid #d50000;
+}
+
+.btn_success {
+    background:#388E3C;
+    border: 2px solid #388E3C;
+}
+.btn_success:hover {
+    background-color: white;
+    color: #388E3C;
+    border: 2px solid #388E3C;
+}
+
+.btn_info {
+    background:#03A9F4;
+    border: 2px solid #03A9F4;
+}
+.btn_info:hover {
+    background-color: white;
+    color: #03A9F4;
+    border: 2px solid #03A9F4;
+}
+
+/************************/
+/* 	      ICONES        */
+/************************/
+.icon {
+    color: #303F9F;
+  }
+
+.icon:hover {
+    color: red
+}
