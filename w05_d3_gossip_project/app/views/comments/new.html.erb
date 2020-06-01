@@ -1,0 +1,30 @@
+<% if @comment.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+  Sorry, impossible de créer le potin pour la (ou les) raison(s) suivante(s) :
+    <ul>
+      <li>Il doit y avoir du contenu.</li>
+    </ul>
+  </div>
+<% end %>
+
+<div class="jumbotron jumbotron-info text-white bg-secondary border border-secondary rounded">
+  <div class="container">
+    <h1 class="display-3">Enregistre un commentaire</h1>
+    <p class="lead font-italic">No problem, on le garde pour nous</p>
+  </div>
+</div>
+
+<div class ="px-5 mt-5">
+  <%= form_for ([@gossip, @comment]) do |f| %>
+
+    <div class="form-group lead mb-3">
+      <label>Commentaire</label>
+      <%= f.text_area :content, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Enregistrer", class: 'btn btn-secondary' %>
+    </div>
+
+  <% end %>
+</div>

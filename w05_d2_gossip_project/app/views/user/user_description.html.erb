@@ -1,0 +1,10 @@
+<h1>Auteur</h1>
+<p>Son nom entier : <%=@user.first_name%> <%=@user.last_name%>  </br></br>
+Son email : <%=@user.email%> </br></br>
+Il a <%=@user.age%> ans </br></br>
+Il vient de la ville de <%=@user.city.name%> </br></br></br>
+
+Créé le : <%=@user.created_at.strftime("%d of %B, %Y") %> </br></br>
+
+
+</p>

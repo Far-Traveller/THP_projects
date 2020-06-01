@@ -1,0 +1,22 @@
+<% if @gossip.save %>
+  <div class="alert alert-success" role="alert">
+    Super ! Tu as réussi à créer un potin !
+  </div>
+<% end %>
+
+<h1>Bienvenue gros !</h1>
+<p>Voici la magnifique liste des potins :</p>
+
+<div class="card-deck">
+  <% Gossip.all.each do |gossip| %>
+    <div class="col-4 mb-3">
+        <div class="card border-info mb-3 mx-auto text-center text-info" style="max-width: 25rem;">
+          <div class="card-header"><%= gossip.user.first_name %></div>
+            <div class="card-body">
+              <h5 class="card-title"><%= gossip.title %> </h5>
+              <span><%= link_to "Lien vers le potin", gossip_path(gossip.id), :class => "btn btn-outline-info" %></span><span class="sr-only">(current)</span>
+            </div>
+          </div>
+        </div>
+  <%end%>
+</div>

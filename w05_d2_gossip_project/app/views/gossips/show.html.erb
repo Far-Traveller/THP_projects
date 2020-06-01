@@ -1,0 +1,9 @@
+<h1>Gossip</h1>
+<p>Son titre : <%=@gossip.title%> </br>
+Son contenu : <%=@gossip.content%> </br>
+Créé le : <%=@gossip.created_at.strftime("%d of %B, %Y") %> </br></br>
+
+Son auteur est : <%=@gossip.user.first_name%> <%=@gossip.user.last_name%> </br></br>
+Tu veux en savoir plus sur lui ??? Et bah cliques ici :</br>
+<%= link_to "Lien vers l'auteur", user_description_path(@gossip.user.id) %>
+</p>

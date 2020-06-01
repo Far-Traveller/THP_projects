@@ -1,0 +1,69 @@
+<% if @user.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    Sorry, impossible de créer cet utilisateur pour la (ou les) raison(s) suivante(s) :
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="jumbotron jumbotron-info text-white bg-info border border-info rounded">
+  <div class="container">
+    <h1 class="display-3">Nouvel utilisateur</h1>
+    <p class="lead font-italic">Bienvenue parmis nous Moussaillon !</p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class ="panel-body m-5">
+    <%= form_for @user, html: {class: 'form-horizontal'} do |f| %>
+
+      <div class="form-group">
+        <%= f.label :first_name, "Prénom" %>
+        <%= f.text_field :first_name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :last_name, "Nom" %>
+        <%= f.text_field :last_name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :age, "Age" %>
+        <%= f.text_field :age, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description, "Description" %>
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :city, "Ville" %>
+        <%= f.collection_select(:city, City.all, :id, :name, {:prompt=>true}, {:class=>'form-control'}) %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email, "Email" %>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, "Mot de passe" %>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+      <%= f.label :password_confirmation, "Confirmer le mot de passe" %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "S'inscrire", class: 'btn btn-info' %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

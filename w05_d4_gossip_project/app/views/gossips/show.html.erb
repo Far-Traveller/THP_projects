@@ -1,0 +1,73 @@
+<!Messages de notifs!>
+<%= flash[:success] %>
+<%= flash[:danger] %>
+
+<!#En-tête de la page!>
+<div class="jumbotron jumbotron-info text-white bg-info border border-info rounded">
+  <div class="container">
+    <h1 class="display-3"><%=@gossip.title%></h1>
+    <p class="lead font-italic">Gossip n°<%= Gossip.all.index(@gossip) + 1 %></p>
+  </div>
+</div>
+
+<div class="container marketing">
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading">De <u><%=@gossip.user.first_name%> <%=@gossip.user.last_name%></u></h2>
+      </br>
+      <p class="lead"><%=@gossip.content%></p>
+      </br>
+      <p class="mb-1 text-muted">Créé le <%=@gossip.created_at%></p>
+      <p class="mb-1 text-muted">Modifié le <%=@gossip.updated_at%></p>
+      </br>
+      <p class="mb-1 text-muted font-italic">Depuis la ville de <%=@gossip.user.city.name%></p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="featurette-image img-fluid mx-auto rounded" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqPJRmuIeAoAUJCcTj3JDaBEK2DtV43vp26ZbCPbwz53KzqiVY&s" data-holder-rendered="true" style="width: 439.5px; height: 258px">
+    </div>
+  </div>
+  </br>
+  <p class="text-center">
+   <span><%= link_to "En savoir plus sur l'auteur", user_path(@gossip.user.id), :class => "btn btn-info" %></span><span class="sr-only">(current)</span>
+   <span><%= link_to "En savoir plus sur la ville", city_path(@gossip.user.city.id), :class => "btn btn-dark" %></span><span class="sr-only">(current)</span>
+   <span><%= link_to "Editer le gossip", edit_gossip_path(@gossip.id), :class => "btn btn-success" %></span><span class="sr-only">(current)</span>
+   <span><%= link_to "Supprimer le gossip", gossip_path(@gossip.id), :class => "btn btn-danger", data: { confirm: "Oula, es-tu sur ??" }, method: :delete %></span>
+  </p>
+</div>
+</br>
+<hr>
+</br>
+
+<div class="d-flex align-items-center p-3 my-3 text-info bg-light rounded box-shadow border border-info">
+  <img class="mr-3" src="https://castelleonard.com/wp-content/uploads/2015/11/commentaires.png" alt="" width="100" height="48">
+  <div class="lh-100">
+    <h2 class="mb-0 lh-100">Liste des commentaires</h2>
+  </div>
+</div>
+
+<span><%= link_to "Nouveau commentaire", new_gossip_comment_path(@gossip.id), :class => "ml-5 btn btn-secondary" %></span>
+<table class="table table-striped table-secondary mt-3 text-center">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Auteur</th>
+      <th scope="col">Commentaire</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% i = 1 %>
+    <% @gossip.comments.each do |comment| %>
+      <tr>
+        <th scope="row"><%= i %></th>
+        <td><%= comment.user.first_name %> <%= comment.user.last_name %></td>
+        <td><%= comment.content %></td>
+        <td>
+          <%= link_to "Editer le commentaire", edit_gossip_comment_path(@gossip.id, comment.id), :type => "button",  :class => 'btn btn-success mr-4' %>
+          <%= link_to "Supprimer le commentaire", gossip_comment_path(@gossip.id, comment.id), :type => "button", :method => :delete, :class => 'btn btn-danger' %>
+        </td>
+      </tr>
+      <% i += 1 %>
+    <% end %>
+  </tbody>
+</table>

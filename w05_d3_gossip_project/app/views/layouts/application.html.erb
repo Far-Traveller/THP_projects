@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="jpg" href="https://i.etsystatic.com/15492164/r/il/c68c58/1537451425/il_570xN.1537451425_hsx7.jpg">
+    <title>The Gossip Project</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+    
+  <body>
+  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-bottom">
+    <a class="navbar-brand" href="#">
+      <img src="https://i.etsystatic.com/15492164/r/il/c68c58/1537451425/il_570xN.1537451425_hsx7.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+      Gossip Project
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <span><%= link_to "Accueil", gossips_path, :class => "nav-item nav-link active" %></span><span class="sr-only">(current)</span>
+        <span><%= link_to "Nouveau potin", new_gossip_path, :class => "nav-item nav-link" %></span><span class="sr-only">(current)</span>
+        <span><%= link_to "Team", team_path, :class => "nav-item nav-link" %></span><span class="sr-only">(current)</span>
+        <span><%= link_to "Contact", contact_path, :class => "nav-item nav-link" %></span><span class="sr-only">(current)</span>
+      </div>
+    </div>
+    </nav>
+    
+    <%= yield %>
+  </body>
+</html>
+
+  

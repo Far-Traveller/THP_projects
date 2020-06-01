@@ -1,0 +1,27 @@
+<div class="jumbotron jumbotron-info text-white bg-info border border-info rounded">
+  <div class="container">
+    <h1 class="display-3"><%=@city.name%> - <i><%=@city.zip_code%></i></h1>
+    <p class="lead font-italic">Ville n°<%= City.all.index(@city) + 1 %></p>
+  </div>
+</div>
+
+<h3 class="font-weight-bold text-center">Et voilà tous les ragots de cette ville :</h3>
+</br>
+<div class="card-deck">
+  <% Gossip.all.select {|gossip| gossip.user.city.id == City.find(params[:id]).id}.each do |gossip| %>
+    <div class="col-4 mb-3">
+        <div class="card border-info mb-3 mx-auto text-center text-info" style="max-width: 25rem;">
+          <div class="card-header text-white bg-info">Gossip n°<%= Gossip.all.index(gossip) + 1 %> par <b><%= gossip.user.first_name %></b> <i>(de <%=gossip.user.city.name%>)</i></div>
+            <div class="card-body">
+              <h5 class="card-title"><%= gossip.title %> </h5>
+              <p class="card-text font-italic text-dark"><%= gossip.content.slice(0..30) %>...</p>
+              <span><%= link_to "En savoir plus", gossip_path(gossip.id), :class => "btn btn-outline-info" %></span><span class="sr-only">(current)</span>
+            </div>
+          </div>
+        </div>
+  <%end%>
+</div>
+
+<hr>
+<p class="mb-1 text-muted">Créée le <%=@city.created_at%></p>
+<p class="mb-1 text-muted">Modifiée le <%=@city.updated_at%></p>

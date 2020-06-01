@@ -1,0 +1,33 @@
+<% if @gossip.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    Sorry, impossible de créer le potin pour la (ou les) raison(s) suivante(s) :
+    <ul>
+      <% @gossip.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="jumbotron jumbotron-info text-white bg-info border border-info rounded">
+  <div class="container">
+    <h1 class="display-3">Enregistre le dernier gossip</h1>
+    <p class="lead font-italic">No problem, on le garde pour nous</p>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+
+    <%= label_tag 'Titre :' %></br>
+    <%= text_field_tag 'title', nil, placeholder: 'Simpson', maxlength: 14 %>
+    <br /> <br />
+
+    <%= label_tag 'Contenu :' %></br>
+    <%= text_area_tag 'content', nil, placeholder: 'Homer a mangé le dernier donuts !!!', size: "50x6" %>
+    <br /> <br />
+
+    <%= submit_tag "Enregistrer", :class => 'button' %>
+
+<% end %>
+</div>
